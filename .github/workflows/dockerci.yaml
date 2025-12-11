@@ -19,3 +19,9 @@ jobs:
 
        - name: Push the image
          run: docker push ${{ vars.DOCKERHUB_USERNAME }}/dockerdemo:v1
+
+       - name: Run the container
+         run: docker run --name test -itd -p 8080:8080 ${{ vars.DOCKERHUB_USERNAME }}/dockerdemo:v1
+
+       - name: Test the container
+         run: docker ps
