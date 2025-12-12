@@ -44,7 +44,7 @@ jobs:
          run: |
             kubectl apply -f mydeploy.yaml
             kubectl apply -f service.yaml
-            kubectl wait --for=condition=ready pod -l app=hello-world-python
+            kubectl wait --for=condition=ready pod -l app=demo
             
        - name: View Deployment and Service
          run: |
